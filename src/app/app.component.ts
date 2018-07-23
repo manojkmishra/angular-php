@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import {HelloComponent} from './hello/hello.component';
 
+// ----decorator-----------------------------------------
 function dlog(target, name, descriptor) {
 console.log('/src/app/app.component.ts--target, name, descriptor=', target, name, descriptor );
 // store the original function in a variable
@@ -18,12 +20,7 @@ console.log('/src/app/app.component.ts--target, name, descriptor=', target, name
 })
 export class AppComponent {
   title = 'app';
-
-  constructor() {
-    this.anymethod();
-  }
+  constructor() {  this.anymethod();  }
   @dlog
-  anymethod() {
-    console.log('/src/app/app.component.ts--hello in dlog');
-  }
+  anymethod() { console.log('/src/app/app.component.ts--hello in dlog');  }
 }
