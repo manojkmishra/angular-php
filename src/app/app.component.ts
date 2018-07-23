@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 // import {HelloComponent} from './hello/hello.component';
 
 // ----decorator-----------------------------------------
+/*
 function dlog(target, name, descriptor) {
 console.log('/src/app/app.component.ts--target, name, descriptor=', target, name, descriptor );
 // store the original function in a variable
@@ -12,6 +13,7 @@ console.log('/src/app/app.component.ts--target, name, descriptor=', target, name
 // return the descriptor
  return descriptor;
 }
+*/
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,16 @@ console.log('/src/app/app.component.ts--target, name, descriptor=', target, name
 })
 export class AppComponent {
   title = 'app';
+  constructor() {
+  this.title = '' ;
+  setInterval(() => this.title = Math.random().toString(), 500) ;
+}
+clickFunction(){
+  console.log('button clicked');
+}
+/*
   constructor() {  this.anymethod();  }
   @dlog
   anymethod() { console.log('/src/app/app.component.ts--hello in dlog');  }
+  */
 }
