@@ -4,6 +4,17 @@
 <input type="text" [value]="title1" (input)="updateTitle1($event)"/> {{title1}}
 <br>
 <input type="text" [(ngModel)]="title2"/> {{title2}}
-
+<table>
+  <tr>
+    <td>id</td>
+    <td>Name</td>
+    <td>IsOnline</td>
+  </tr>
+  <tr *ngFor="let data of data1; let someindex = index;  let evenrec = even; let oddrec = odd; " [ngClass]="{odd: oddrec, even: evenrec} ">
+    <td> {{someindex}}</td>
+    <td> {{data.name}}</td>
+    <td> {{data.online}}</td>
+  </tr>
+</table>
 
 
