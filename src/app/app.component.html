@@ -2,5 +2,8 @@
 <button (click)="clickFunction()">click here</button>
 <br/>
 <input type="text" [value]="title1" (input)="updateTitle1($event)"/> {{title1}}
+<br>
+<input type="text" [(ngModel)]="title2"/> {{title2}}
+
 
 
