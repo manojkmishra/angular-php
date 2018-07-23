@@ -22,12 +22,19 @@ console.log('/src/app/app.component.ts--target, name, descriptor=', target, name
 })
 export class AppComponent {
   title = 'app';
+ 
   constructor() {
   this.title = '' ;
   setInterval(() => this.title = Math.random().toString(), 500) ;
 }
-clickFunction(){
+clickFunction() {
   console.log('button clicked');
+}
+// tslint:disable-next-line:member-ordering
+title1 = 'app1';
+updateTitle1(e) {
+  console.log('updateTitile1---even-e=', e.target.value);
+  this.title1 = e.target.value;
 }
 /*
   constructor() {  this.anymethod();  }
