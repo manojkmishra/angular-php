@@ -5,10 +5,11 @@ import { HelloComponent } from './hello/hello.component';
 
 import {FormsModule} from '@angular/forms';
 import { RecserviceService } from './recservice.service' ;
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [ AppComponent, HelloComponent ],
-  imports: [ BrowserModule,  FormsModule ],
+  imports: [ BrowserModule,  FormsModule , HttpClientModule],
   providers: [RecserviceService],
   bootstrap: [AppComponent]
 })

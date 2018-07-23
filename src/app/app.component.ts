@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 import { RecserviceService } from './recservice.service';
 
+interface myData { obj: Object ; }
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent { 
-data1 = {};
+//  data1 = {};
+data1 = [];
 constructor(private myservice: RecserviceService ) {
        this.title = '' ;  setInterval(() => this.title = Math.random().toString(), 500) ;
       }
 // tslint:disable-next-line:use-life-cycle-interface
-ngOnInit() {  this.data1 = this.myservice.getData() ; 
+ngOnInit() {  // this.data1 =
+                 this.myservice.getData()
+                  .subscribe(data => { console.log('/app.component.ts--data.obj=', data.obj) ; this.data1 = data.obj ; }  );
               console.log('this.data1=', this.data1);
            }
 // tslint:disable-next-line:member-ordering
