@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {HelloComponent} from './hello/hello.component';
+// import {HelloComponent} from './hello/hello.component';
 
 // ----decorator-----------------------------------------
 function dlog(target, name, descriptor) {
