@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RecserviceService } from './recservice.service';
 
-interface myData { obj: Object ; }
+interface myData { obj: Array<Object> ; }
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,7 +16,9 @@ constructor(private myservice: RecserviceService ) {
 // tslint:disable-next-line:use-life-cycle-interface
 ngOnInit() {  // this.data1 =
                  this.myservice.getData()
-                  .subscribe(data => { console.log('/app.component.ts--data.obj=', data.obj) ; this.data1 = data.obj ; }  );
+                  .subscribe(data => { console.log('/app.component.ts--data.obj=', data.obj) ;
+                                       this.data1 = data.obj ;
+                                     });
               console.log('this.data1=', this.data1);
            }
 // tslint:disable-next-line:member-ordering
